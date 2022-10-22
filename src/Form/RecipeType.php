@@ -137,7 +137,7 @@ class RecipeType extends AbstractType
                 'required' => false,
                 'label' => 'Mettre la recette en favoris ?    ',
                 'label_attr' => [
-                    'class' => 'form-check-label mr-2'
+                    'class' => 'form-check-label me-2'
                 ],
                 'constraints' => [
                     new Assert\NotNull()
@@ -150,7 +150,7 @@ class RecipeType extends AbstractType
                 'required' => false,
                 'label' => 'Souhaitez vous que votre recette soit publique ?    ',
                 'label_attr' => [
-                    'class' => 'form-check-label mr-2'
+                    'class' => 'form-check-label me-2'
                 ],
                 'constraints' => [
                     new Assert\NotNull()
