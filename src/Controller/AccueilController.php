@@ -9,7 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class AccueilController extends AbstractController
 {
-    #[Route('/', name: 'home.index', methods: ['GET'])]
+    #[Route('/', name: 'home.index')]
     public function index(RecipeRepository $recipeRepository): Response
     {
         return $this->render('pages/accueil.html.twig', [
