@@ -9,8 +9,11 @@
 			<div class="jumbotron">
 				<h1 class="display-4">Bienvenue sur nutridiet</h1>
 				<p class="lead">Nutridiet est une application qui va te permettre de créer des recettes à   base d'ingrédients que tu auras choisie. Tu pourras partager tes recettes ou bien les garder pour toi. Le principal est de te faire plaisir et de prendre soin de toi et de tes  proches.</p>
-				<hr class="my-4">
-				<div class="d-flex">
+				<hr class="mt-4">
+				{% if app.user %}
+				<p>Bonjour {{ app.user.fullName }}</p>
+				{% else %}
+				<div class="d-flex justify-content-between mt-4">
 					<div>
 						<p>Pour commencer, inscris toi sur le site grace au lien ci dessous.</p>
 						<a class="btn btn-secondary btn-lg" href="{{ path("security.registration") }}" role="button">Inscription</a>
@@ -20,9 +23,10 @@
 						<a class="btn btn-success btn-lg" href="{{ path("security.login") }}" role="button">Connexion</a>
 					</div>
 				</div>
+				{% endif %}
 			</div>
 			<div class="recipes">
-				<h2 class="mt-4">Recettes de la communautée</h2>
+				<h2 class="mt-4">Recettes de la communauté</h2>
 				<div class="d-flex justify-content-between mt-4">
 					{% for recipe in recipes %}
 						<div class="card border-primary mb-3" style="max-width:20rem;">
