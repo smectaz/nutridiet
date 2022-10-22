@@ -81,8 +81,8 @@
 			<div id="ingredients-wrapper" class="mt-4">
 				{% for field in form.ingredients %}
 					<div style="min-width: 10%;">
-						{{ form_widget(field) }}
 						{{ form_label(field) }}
+						{{ form_widget(field) }}
 					</div>
 				{% endfor %}
 			</div>

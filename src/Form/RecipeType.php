@@ -176,7 +176,7 @@ class RecipeType extends AbstractType
                 'label_attr' => [
                     'class' => 'form-label mt-4'
                 ],
-                'choice_label' => 'name',
+                'choice_label' => 'name me-2',
                 'multiple' => true,
                 'expanded' => true,
             ])
