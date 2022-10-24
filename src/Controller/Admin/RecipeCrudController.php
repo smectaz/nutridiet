@@ -9,6 +9,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
@@ -48,14 +49,8 @@ class RecipeCrudController extends AbstractCrudController
             TextareaField::new('description')
                 ->setFormType(CKEditorType::class)
                 ->hideOnIndex(),
-            ChoiceField::new('isFavorite')->renderExpanded()->setChoices([
-                'oui' => 'oui',
-                'non' => 'non',
-            ]),
-            ChoiceField::new('isPublic')->renderExpanded()->setChoices([
-                'oui' => 'oui',
-                'non' => 'non',
-            ]),
+            BooleanField::new('isFavorite')->renderAsSwitch(false),
+            BooleanField::new('isPublic')->renderAsSwitch(false),
             DateTimeField::new('createdAt')
                 ->hideOnForm()
         ];
