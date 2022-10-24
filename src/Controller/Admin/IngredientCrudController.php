@@ -20,8 +20,8 @@ class IngredientCrudController extends AbstractCrudController
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->setEntityLabelInPlural('Utilisateurs')
-            ->setEntityLabelInSingular('Utilisateur')
+            ->setEntityLabelInPlural('Ingrédients')
+            ->setEntityLabelInSingular('Ingrédient')
             ->setPageTitle('index', 'Nutridiet - administration des utilisateurs')
             ->setPaginatorPageSize(10);
     }
