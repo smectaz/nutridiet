@@ -49,12 +49,12 @@ class RecipeCrudController extends AbstractCrudController
                 ->setFormType(CKEditorType::class)
                 ->hideOnIndex(),
             ChoiceField::new('isFavorite')->renderExpanded()->setChoices([
-                'oui' => true,
-                'non' => false,
+                'oui' => 'oui',
+                'non' => 'non',
             ]),
             ChoiceField::new('isPublic')->renderExpanded()->setChoices([
-                'oui' => true,
-                'non' => false,
+                'oui' => 'oui',
+                'non' => 'non',
             ]),
             DateTimeField::new('createdAt')
                 ->hideOnForm()
