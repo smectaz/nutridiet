@@ -36,13 +36,18 @@ class RecipeCrudController extends AbstractCrudController
             IdField::new('id')
                 ->hideOnForm(),
             TextField::new('name'),
-            IntegerField::new('price'),
+            MoneyField::new('price')->setCurrency('EUR'),
             IntegerField::new('nbPeople'),
-            ChoiceField::new('difficulty')->renderExpanded(),
+            ChoiceField::new('difficulty')->renderExpanded()->setChoices([
+                '1 très facile' => 1,
+                    '2 facile' => 2,
+                    '3 moyenne' => 3,
+                    '4 dure' => 4,
+                    '5 très dure' => 5,
+            ]),
             TextareaField::new('description')
                 ->setFormType(CKEditorType::class)
                 ->hideOnIndex(),
-            MoneyField::new('price')->setCurrency('EUR'),
             DateTimeField::new('createdAt')
                 ->hideOnForm()
         ];
