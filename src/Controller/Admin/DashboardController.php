@@ -3,7 +3,9 @@
 namespace App\Controller\Admin;
 
 use App\Entity\User;
+use App\Entity\Recipe;
 use App\Entity\Contact;
+use App\Entity\Ingredient;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
