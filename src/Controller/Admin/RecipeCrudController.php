@@ -38,7 +38,7 @@ class RecipeCrudController extends AbstractCrudController
             TextField::new('name'),
             MoneyField::new('price')->setCurrency('EUR'),
             IntegerField::new('nbPeople'),
-            ChoiceField::new('difficulty')->renderExpanded()->setChoices([
+            ChoiceField::new('difficulty')->setChoices([
                 '1 très facile' => 1,
                     '2 facile' => 2,
                     '3 moyenne' => 3,
