@@ -32,7 +32,7 @@ class IngredientCrudController extends AbstractCrudController
             IdField::new('id')
                 ->hideOnForm(),
             TextField::new('name'),
-            MoneyField::new('price'),
+            MoneyField::new('price')->setCurrency('EUR'),
             DateTimeField::new('createdAt')
                 ->hideOnForm()
         ];
