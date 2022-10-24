@@ -7,6 +7,7 @@ use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
@@ -36,6 +37,8 @@ class RecipeCrudController extends AbstractCrudController
         return [
             IdField::new('id')
                 ->hideOnForm(),
+            ImageField::new('imageFile')->setUploadDir('public/images/recette/')
+                ->hideOnIndex(),
             TextField::new('name'),
             MoneyField::new('price')->setCurrency('EUR'),
             IntegerField::new('nbPeople'),
