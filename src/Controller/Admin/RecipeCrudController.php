@@ -37,8 +37,6 @@ class RecipeCrudController extends AbstractCrudController
         return [
             IdField::new('id')
                 ->hideOnForm(),
-            ImageField::new('imageFile')->setBasePath('/public/images/recette/')
-                ->hideOnIndex(),
             TextField::new('name'),
             MoneyField::new('price')->setCurrency('EUR'),
             IntegerField::new('nbPeople'),
