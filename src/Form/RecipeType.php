@@ -120,7 +120,7 @@ class RecipeType extends AbstractType
                     'class' => 'form-control',
                 ],
                 'required' => false,
-                'label' => 'Prix ',
+                'label' => 'Prix par personne',
                 'label_attr' => [
                     'class' => 'form-label mt-4'
                 ],

@@ -46,7 +46,7 @@ class IngredientType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                 ],
-                'label' => 'Prix',
+                'label' => 'Prix au kilo ou litre',
                 'label_attr' => [
                     'class' => 'form-label mt-4'
                 ],
