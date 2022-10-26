@@ -57,11 +57,6 @@
 					<p>Prix non renseigné.</p>
 				{% endif %}
 			</div>
-
-			<div class="mt-4">
-				<pre>Description de la recette :
-				{{ recipe.description }}</pre>
-			</div>
 			<div class="mt-4">
 				<p>Ingrédients de la recette :</p>
 				{% for ingredient in recipe.ingredients %}
@@ -69,6 +64,11 @@
 						{{ ingredient.name }}</span>
 				{% endfor %}
 			</div>
+			<div class="mt-4">
+				<pre>Description de la recette :
+				{{ recipe.description|raw }}</pre>
+			</div>
+
 			<div class="mark mt-4">
 				{{ form(form)}}
 				</div>
