@@ -11,3 +11,4 @@ vich_uploader:
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
             delete_on_update: false
             delete_on_remove: false
+            inject_on_load: false
