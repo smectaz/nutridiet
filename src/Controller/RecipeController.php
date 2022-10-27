@@ -60,7 +60,7 @@ class RecipeController extends AbstractController
             $item->expiresAfter(15);
             return $repository->findPublicRecipe(null);
         });
-        
+
         $recipes = $paginator->paginate(
             $data,
             $request->query->getInt('page', 1),
