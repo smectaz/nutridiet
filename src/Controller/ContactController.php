@@ -50,7 +50,7 @@ class ContactController extends AbstractController
             $manager->flush();
 
             //Email vers administration cree avec le MailService
-            $mailService -> sendEmail(
+            $mailService->sendEmail(
                 $contact->getEmail(),
                 $contact->getSubject(),
                 'emails/mail.html.twig',
