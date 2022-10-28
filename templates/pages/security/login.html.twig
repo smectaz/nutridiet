@@ -30,7 +30,7 @@
 				</div>
 				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 				<button type="submit" class="btn btn-warning mt-4">Se connecter</button>
-				<div class="d-flex justify-content-between mt-4">
+				<div class="d-flex justify-content-around mt-4">
 					<div class="mt-4">
 						<p>Si vous n'étes pas inscrit</p>
 						<a href="{{ path('security.registration') }}" class="btn btn-secondary mt-2">S'incrire</a>
