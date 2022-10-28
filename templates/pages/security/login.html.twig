@@ -30,13 +30,15 @@
 				</div>
 				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 				<button type="submit" class="btn btn-warning mt-4">Se connecter</button>
-				<div class="mt-4">
-					<p>Si vous n'étes pas inscrit, cliquez sur ce bouton</p>
-					<a href="{{ path('security.registration') }}" class="btn btn-secondary mt-2">S'incrire</a>
-				</div>
-				<div class="mt-4">
-					<p>Si vous avez oublier votre mot de passe, cliquez sur ce bouton</p>
-					<a href="{{ path('security.oubli') }}" class="btn btn-success mt-2">Mot de passe oublié</a>
+				<div class="d-flex justify-content-between mt-4">
+					<div class="mt-4">
+						<p>Si vous n'étes pas inscrit</p>
+						<a href="{{ path('security.registration') }}" class="btn btn-secondary mt-2">S'incrire</a>
+					</div>
+					<div class="mt-4">
+						<p>Si vous avez oublier votre mot de passe</p>
+						<a href="{{ path('security.oubli') }}" class="btn btn-success mt-2">Mot de passe oublié</a>
+					</div>
 				</div>
 			</form>
 		</div>
