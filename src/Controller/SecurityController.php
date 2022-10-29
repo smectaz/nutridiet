@@ -77,9 +77,4 @@ class SecurityController extends AbstractController
         ]);
     }
 
-    #[Route('/oubli-pass', name:'security.oubli')]
-    public function forgottenPassword(): Response 
-    {
-        return $this->render('pages/security/reset_password_request.html.twig');
-    }
 }
