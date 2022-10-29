@@ -52,9 +52,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[Assert\NotBlank()]
     private ?string $password = null;
 
-    #[ORM\Column(type: 'string', length: 100, nullable: true)]
-    private $resetToken;
-
     #[ORM\Column]
     #[Assert\NotNull()]
     private ?\DateTimeImmutable $createdAt = null;
@@ -187,26 +184,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setPassword(string $password): self
     {
         $this->password = $password;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of resetToken
-     */
-    public function getResetToken()
-    {
-        return $this->resetToken;
-    }
-
-    /**
-     * Set the value of resetToken
-     *
-     * @return  self
-     */
-    public function setResetToken($resetToken)
-    {
-        $this->resetToken = $resetToken;
 
         return $this;
     }
