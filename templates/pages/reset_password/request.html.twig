@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+	{% block title %}NutriDiet - mot de pass oublié
+	{% endblock %}
+
+	{% block body %}
+		{% for flash_error in app.flashes('reset_password_error') %}
+			<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+		{% endfor %}
+		<div class="container">
+			<h1 class="mt-4">Formulaire de réinitialisation du mot de passe</h1>
+
+			{{ form_start(requestForm) }}
+			<div class="form-group mt-4">
+				<div>
+					<small>
+                    Entrez votre email de connexion pour recevoir un lien de réinitialisation du mot de passe.
+					</small>
+				</div>
+				{{ form_row(requestForm.email) }}
+			</div>
+
+			<button class="btn btn-warning mt-4">Valider</button>
+			{{ form_end(requestForm) }}
+		</div>
+	{% endblock %}
