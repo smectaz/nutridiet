@@ -23,5 +23,6 @@
         "node": "v14.15.*",
         "npm": "6.14.*",
         "yarn": "1.22.*"
-    }
+    },
+    "build": "webpack --mode production --config ./webpack.prod.config.js"
 }
