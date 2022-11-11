@@ -1,5 +1,8 @@
 body {
     background-image: url(../../public/images/fond.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 .texte{
     font-weight: 700;
