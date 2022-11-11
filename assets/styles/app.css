@@ -1,5 +1,5 @@
 body {
-    background-color: lightgray !important;
+    background-image: url(../../public/images/fond.jpg);
 }
 .texte{
     font-weight: 700;
