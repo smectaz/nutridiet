@@ -6,4 +6,16 @@ body {
 }
 .texte{
     font-weight: 700;
+    text-decoration: underline;
+}
+
+.logo{
+    width:130px;
+    margin-right: 50px;
+}
+
+.text-nav{
+    font-size:18px;
+    font-weight:700;
+
 }
