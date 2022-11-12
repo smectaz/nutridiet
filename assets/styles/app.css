@@ -3,6 +3,8 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    color: #344854;
+    font-weight:400;
 }
 .texte{
     font-weight: 700;
