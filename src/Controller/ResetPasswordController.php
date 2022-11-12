@@ -160,7 +160,7 @@ class ResetPasswordController extends AbstractController
             ->from(new Address('admin@nutridiet.fr', 'Administrateur de nutridiet'))
             ->to($user->getEmail())
             ->subject('Your password reset request')
-            ->htmlTemplate('reset_password/email.html.twig')
+            ->htmlTemplate('/pages/reset_password/email.html.twig')
             ->context([
                 'resetToken' => $resetToken,
             ])
