@@ -6,7 +6,7 @@
 s
 			<div class="text-nav collapse navbar-collapse" id="navbarColor03">
 				<a class="nav-link active" href="{{ path("home.index") }}">
-					<img class="logo" {% if app.user %}class="logo-user"{% endif %} src={{asset('/media/menu.jpg')}} alt="logo">
+					<img {% if app.user %}class="logo-user" { else } class="logo" {% endif %} src={{asset('/media/menu.jpg')}} alt="logo">
 				</a>
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item">
