@@ -10,7 +10,11 @@ body {
 
 .logo{
     width:130px;
-    margin-right: 250px;
+    margin-right: 350px;
+}
+.logo-user{
+    width:130px;
+    margin-right: 280px;
 }
 
 .text-nav{
