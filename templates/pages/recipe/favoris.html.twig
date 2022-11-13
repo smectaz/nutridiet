@@ -9,7 +9,7 @@
 				<h1>Vos recettes favorites</h1>
 				<div class="d-flex justify-content-center flex-wrap">
 
-					{% for recipe in favrecipes %}
+					{% for recipe in recipes %}
 						<div class="card border-primary mb-3" style="max-width:20rem; margin:15px;">
 							<a href="{{ path('recipe.show', { id: recipe.id} ) }}" style="cursor:pointer; color:black; text-decoration:none;">
 								<div class="card-header">Recette n°{{ recipe.id }}</div>
