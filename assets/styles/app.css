@@ -23,7 +23,12 @@ body {
 
 }
 
-.drop{
+.drop-user{
     top:70% !important;
     left:30% !important;
+}
+
+.drop{
+    top:70% !important;
+    left:40% !important;
 }
