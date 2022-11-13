@@ -70,7 +70,7 @@ class RecipeController extends AbstractController
         $recipes = $paginator->paginate(
             $data,
             $request->query->getInt('page', 1),
-            9
+            6
         );
 
         return $this->render('pages/recipe/community.html.twig', [
@@ -98,7 +98,7 @@ class RecipeController extends AbstractController
         $recipes = $paginator->paginate(
             $favData,
             $request->query->getInt('page', 1),
-            9
+            6
         );
 
         return $this->render('pages/recipe/favoris.html.twig', [
