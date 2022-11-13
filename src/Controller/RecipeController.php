@@ -68,7 +68,7 @@ class RecipeController extends AbstractController
         );
 
         return $this->render('pages/recipe/community.html.twig', [
-            'recipes' => $recipes
+            'favrecipes' => $recipes
         ]);
     }
 
