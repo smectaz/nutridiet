@@ -33,8 +33,14 @@ class RecipeController extends AbstractController
     #[Route('/recette', name: 'recipe.index', methods: ['GET'])]
     public function index(RecipeRepository $repository, PaginatorInterface $paginator, Request $request): Response
     {
+        $cache = new FilesystemAdapter();
+        $fullData = $cache->get('fullRecipes', function (ItemInterface $item) use ($repository) {
+            $item->expiresAfter(15);
+            return $repository->findBy(['user' => $this->getUser()]);
+        });
+
         $recipes = $paginator->paginate(
-            $repository->findBy(['user' => $this->getUser()]),
+            $fullData,
             $request->query->getInt('page', 1),
             9
         );
@@ -84,13 +90,13 @@ class RecipeController extends AbstractController
     public function indexFavorite(RecipeRepository $repository, PaginatorInterface $paginator, Request $request): response
     {
         $cache = new FilesystemAdapter();
-        $favdata = $cache->get('favrecipes', function (ItemInterface $item) use ($repository) {
+        $favData = $cache->get('favRecipes', function (ItemInterface $item) use ($repository) {
             $item->expiresAfter(15);
             return $repository->findFavoriteRecipe(null);
         });
 
         $recipes = $paginator->paginate(
-            $favdata,
+            $favData,
             $request->query->getInt('page', 1),
             9
         );
