@@ -72,6 +72,34 @@ class RecipeController extends AbstractController
         ]);
     }
 
+        /**
+     * controller pour voir toute les recettes favorites
+     *
+     * @param RecipeRepository $repository
+     * @param PaginatorInterface $paginator
+     * @param Request $request
+     * @return response
+     */
+    #[Route('/recette/favoris', name: 'recipe.favoris', methods: ['GET'])]
+    public function indexFavorite(RecipeRepository $repository, PaginatorInterface $paginator, Request $request): response
+    {
+        $cache = new FilesystemAdapter();
+        $data = $cache->get('recipes', function (ItemInterface $item) use ($repository) {
+            $item->expiresAfter(15);
+            return $repository->findFavoriteRecipe(null);
+        });
+
+        $recipes = $paginator->paginate(
+            $data,
+            $request->query->getInt('page', 1),
+            9
+        );
+
+        return $this->render('pages/recipe/favoris.html.twig', [
+            'recipes' => $recipes
+        ]);
+    }
+
 
     /**
      * controller qui permet de voir une recette publique

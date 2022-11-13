@@ -5,7 +5,7 @@
 			</button>
 			<div class="text-nav collapse navbar-collapse" id="navbarColor03">
 				<a class="nav-link active" href="{{ path("home.index") }}">
-					<img {% if app.user %}class="logo-user" {% else %} class="logo" {% endif %} src={{asset('/media/menu.jpg')}} alt="logo">
+					<img {% if app.user %} class="logo-user" {% else %} class="logo" {% endif %} src={{asset('/media/menu.jpg')}} alt="logo">
 				</a>
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item">
@@ -40,6 +40,7 @@
 						<li class="nav-item dropdown" style="margin-right: 5rem;">
 							<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ app.user.fullName }}</a>
 							<div class="dropdown-menu">
+								<a class="dropdown-item" href="{{ path('recipe.favoris') }}">Mes recettes favorites</a>
 								<a class="dropdown-item" href="{{ path('user.edit', {id : app.user.id}) }}">Modifier mes informations</a>
 								<a class="dropdown-item" href="{{ path('user.edit.password', {id : app.user.id}) }}">Modifier mon mot de passe</a>
 								<div class="dropdown-divider"></div>

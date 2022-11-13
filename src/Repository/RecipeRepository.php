@@ -51,6 +51,16 @@ class RecipeRepository extends ServiceEntityRepository
             ->getResult();
     }
 
+    public function findFavoriteRecipe(): array
+    {
+        $queryBuilder = $this->createQueryBuilder('r')
+            ->where('r.isFavorite = 1')
+            ->orderBy('r.createdAt', 'DESC');
+
+        return $queryBuilder->getQuery()
+            ->getResult();
+    }
+
     public function remove(Recipe $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
