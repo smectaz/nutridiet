@@ -15,7 +15,7 @@
 					</li>
 					<li class="nav-item">
 						<a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">La nutri-communauté</a>
-						<div {% if app.user %} class="dropdowm-menu drop-user" {% else %} class="dropdowm-menu drop" {% endif %} >
+						<div {% if app.user %} class="dropdown-menu drop-user" {% else %} class="dropdown-menu drop" {% endif %}>
 							<a class="dropdown-item" href="{{ path('recipe.favoris') }}">Les favoris de la communauté</a>
 							<a class="dropdown-item" href="{{ path("recipe.community") }}">Recettes publiques de la communauté</a>
 						</div>
