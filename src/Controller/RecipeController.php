@@ -84,13 +84,13 @@ class RecipeController extends AbstractController
     public function indexFavorite(RecipeRepository $repository, PaginatorInterface $paginator, Request $request): response
     {
         $cache = new FilesystemAdapter();
-        $data = $cache->get('recipes', function (ItemInterface $item) use ($repository) {
+        $favdata = $cache->get('recipes', function (ItemInterface $item) use ($repository) {
             $item->expiresAfter(15);
             return $repository->findFavoriteRecipe(null);
         });
 
         $recipes = $paginator->paginate(
-            $data,
+            $favdata,
             $request->query->getInt('page', 1),
             9
         );
