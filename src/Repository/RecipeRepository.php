@@ -54,7 +54,8 @@ class RecipeRepository extends ServiceEntityRepository
     public function findFavoriteRecipe(): array
     {
         $queryBuilder = $this->createQueryBuilder('r')
-            ->where('r.isFavorite = 1')
+            ->where('r.isPublic = 1')  
+            -> andwhere('r.isFavorite = 1')
             ->orderBy('r.createdAt', 'DESC');
 
         return $queryBuilder->getQuery()

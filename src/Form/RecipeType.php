@@ -130,12 +130,13 @@ class RecipeType extends AbstractType
                 ]
             ])
             
-            ->add('isFavorite', CheckboxType::class, [
+
+            ->add('isPublic', CheckboxType::class, [
                 'attr' => [
                     'class' => 'form-check-input',
                 ],
                 'required' => false,
-                'label' => 'Mettre la recette en favoris ?    ',
+                'label' => 'Souhaitez vous que votre recette soit publique ?    ',
                 'label_attr' => [
                     'class' => 'form-check-label me-2'
                 ],
@@ -143,12 +144,13 @@ class RecipeType extends AbstractType
                     new Assert\NotNull()
                 ]
             ])
-            ->add('isPublic', CheckboxType::class, [
+
+            ->add('isFavorite', CheckboxType::class, [
                 'attr' => [
                     'class' => 'form-check-input',
                 ],
                 'required' => false,
-                'label' => 'Souhaitez vous que votre recette soit publique ?    ',
+                'label' => 'Mettre la recette en favoris ?    ',
                 'label_attr' => [
                     'class' => 'form-check-label me-2'
                 ],
