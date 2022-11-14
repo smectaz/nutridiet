@@ -81,11 +81,11 @@
 			<br>
 			<div id="ingredients-wrapper" class="mt-4">
 				{% for field in form.ingredients %}
-					<div style="min-width: 10%;">
-						<span class="badge bg-info">
-							{{ form_label(field) }}
-							{{ form_widget(field) }}
-						</span>
+					<div style="min-width: 10%; margin-right:10px;">
+							<span class="badge bg-info">
+								{{ form_label(field) }}
+								{{ form_widget(field) }}
+							</span>
 					</div>
 				{% endfor %}
 			</div>
