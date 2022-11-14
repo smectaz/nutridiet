@@ -27,34 +27,34 @@
 				{{ recipe.createdAt|date('d/m/Y') }}</span>
 			<div class="mt-4">
 				{% if recipe.time %}
-					<p>Temps (en minutes) :
+					<p><span class="texte">Temps</span> (en minutes) :
 						{{recipe.time|min_to_hour}}</p>
 				{% else %}
-					<p>Temps non renseigné.</p>
+					<p class="texte">Temps non renseigné.</p>
 				{% endif %}
 			</div>
 			<div class="mt-4">
 				{% if recipe.nbPeople %}
-					<p>Pour :
+					<p><span class="texte">Pour :</span>
 						{{recipe.nbPeople}}
 						personnes</p>
 				{% else %}
-					<p>Nombres de personnes non renseigné.</p>
+					<p class="texte">Nombres de personnes non renseigné.</p>
 				{% endif %}
 			</div>
 			<div class="mt-4">
 				{% if recipe.difficulty %}
-					<p>Difficulté :{{recipe.difficulty}}/5</p>
+					<p class="texte">Difficulté :{{recipe.difficulty}}/5</p>
 				{% else %}
-					<p>Difficulté non renseigné.</p>
+					<p class="texte">Difficulté non renseigné.</p>
 				{% endif %}
 			</div>
 			<div class="mt-4">
 				{% if recipe.price %}
-					<p>Prix (en euros):{{recipe.price}}
+					<p><span class="texte">Prix</span> (en euros):{{recipe.price}}
 						€</p>
 				{% else %}
-					<p>Prix non renseigné.</p>
+					<p class="texte">Prix non renseigné.</p>
 				{% endif %}
 			</div>
 			<div class="mt-4">
