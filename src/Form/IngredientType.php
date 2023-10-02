@@ -46,7 +46,7 @@ class IngredientType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                 ],
-                'label' => 'Prix',
+                'label' => 'Prix au kilo ou litre',
                 'label_attr' => [
                     'class' => 'form-label mt-4'
                 ],
@@ -57,7 +57,7 @@ class IngredientType extends AbstractType
             ])
             ->add('submit', SubmitType::class, [
                 'attr' => [
-                    'class' => 'btn btn-primary mt-4'
+                    'class' => 'btn btn-warning mt-4'
                 ],
                 'label' => $labelSubmit
             ]);

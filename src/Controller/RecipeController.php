@@ -33,8 +33,14 @@ class RecipeController extends AbstractController
     #[Route('/recette', name: 'recipe.index', methods: ['GET'])]
     public function index(RecipeRepository $repository, PaginatorInterface $paginator, Request $request): Response
     {
+        $cache = new FilesystemAdapter();
+        $fullData = $cache->get('fullRecipes', function (ItemInterface $item) use ($repository) {
+            $item->expiresAfter(15);
+            return $repository->findBy(['user' => $this->getUser()]);
+        });
+
         $recipes = $paginator->paginate(
-            $repository->findBy(['user' => $this->getUser()]),
+            $fullData,
             $request->query->getInt('page', 1),
             9
         );
@@ -60,14 +66,42 @@ class RecipeController extends AbstractController
             $item->expiresAfter(15);
             return $repository->findPublicRecipe(null);
         });
-        
+
         $recipes = $paginator->paginate(
             $data,
             $request->query->getInt('page', 1),
-            9
+            6
         );
 
         return $this->render('pages/recipe/community.html.twig', [
+            'recipes' => $recipes
+        ]);
+    }
+
+        /**
+     * controller pour voir toute les recettes favorites
+     *
+     * @param RecipeRepository $repository
+     * @param PaginatorInterface $paginator
+     * @param Request $request
+     * @return response
+     */
+    #[Route('/recette/favoris', name: 'recipe.favoris', methods: ['GET'])]
+    public function indexFavorite(RecipeRepository $repository, PaginatorInterface $paginator, Request $request): response
+    {
+        $cache = new FilesystemAdapter();
+        $favData = $cache->get('favRecipes', function (ItemInterface $item) use ($repository) {
+            $item->expiresAfter(15);
+            return $repository->findFavoriteRecipe(null);
+        });
+
+        $recipes = $paginator->paginate(
+            $favData,
+            $request->query->getInt('page', 1),
+            6
+        );
+
+        return $this->render('pages/recipe/favoris.html.twig', [
             'recipes' => $recipes
         ]);
     }

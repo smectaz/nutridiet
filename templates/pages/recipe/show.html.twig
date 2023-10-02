@@ -14,7 +14,7 @@
 			{% endfor %}
 			<h1 class="mt-4">{{ recipe.name }}</h1>
 			<div class="recipe_image mt-4">
-				<img style="max-width: 500px;" src="{{ vich_uploader_asset(recipe, 'imageFile') }}">
+				<img style="max-width: 500px; max-height:300px" src="{{ vich_uploader_asset(recipe, 'imageFile') }}">
 			</div>
 			{% if recipe.average > 0 %}
 				<p class="mt-4">La note moyenne de cette recette est de
@@ -27,49 +27,50 @@
 				{{ recipe.createdAt|date('d/m/Y') }}</span>
 			<div class="mt-4">
 				{% if recipe.time %}
-					<p>Temps (en minutes) :
+					<p><span class="texte">Temps</span> (en minutes) :
 						{{recipe.time|min_to_hour}}</p>
 				{% else %}
-					<p>Temps non renseigné.</p>
+					<p class="texte">Temps non renseigné.</p>
 				{% endif %}
 			</div>
 			<div class="mt-4">
 				{% if recipe.nbPeople %}
-					<p>Pour :
+					<p><span class="texte">Pour :</span>
 						{{recipe.nbPeople}}
 						personnes</p>
 				{% else %}
-					<p>Nombres de personnes non renseigné.</p>
+					<p class="texte">Nombres de personnes non renseigné.</p>
 				{% endif %}
 			</div>
 			<div class="mt-4">
 				{% if recipe.difficulty %}
-					<p>Difficulté :{{recipe.difficulty}}/5</p>
+					<p><span class="texte">Difficulté :</span>{{recipe.difficulty}}/5</p>
 				{% else %}
-					<p>Difficulté non renseigné.</p>
+					<p class="texte">Difficulté non renseigné.</p>
 				{% endif %}
 			</div>
 			<div class="mt-4">
 				{% if recipe.price %}
-					<p>Prix (en euros):{{recipe.price}}
+					<p><span class="texte">Prix</span> (en euros):{{recipe.price}}
 						€</p>
 				{% else %}
-					<p>Prix non renseigné.</p>
+					<p class="texte">Prix non renseigné.</p>
 				{% endif %}
 			</div>
-
 			<div class="mt-4">
-				<p>Description de la recette :</p>
-				{{ recipe.description|raw }}
-			</div>
-			<div class="mt-4">
-				<p>Ingrédients de la recette :</p>
+				<p class="texte">Ingrédients de la recette :</p>
 				{% for ingredient in recipe.ingredients %}
-					<span class="badge bg-primary">
+					<span class="badge bg-info">
 						{{ ingredient.name }}</span>
 				{% endfor %}
 			</div>
-			<div class="mark mt-4">
+			<div class="mt-4">
+				<p class="texte">Description de la recette :
+				</p>
+				<p class="description">{{ recipe.description|raw}}</p>
+			</div>
+
+			<div class="mt-4">
 				{{ form(form)}}
 				</div>
 			</div>

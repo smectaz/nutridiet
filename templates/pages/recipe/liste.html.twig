@@ -13,7 +13,7 @@
 			{% if not recipes.items is same as ([]) %}
 
 				<h1>Mes recettes</h1>
-				<a href="{{ path("recipe.new") }}" class="btn btn-primary mt-4">Ajouter une recette</a>
+				<a href="{{ path("recipe.new") }}" class="btn btn-warning mt-4">Ajouter une recette</a>
 				<div class="count">
 					<p class="mt-4">Nombre total de recette(s) :{{ recipes.getTotalItemCount }}</p>
 				</div>

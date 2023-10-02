@@ -52,7 +52,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[Assert\NotBlank()]
     private ?string $password = null;
 
-
     #[ORM\Column]
     #[Assert\NotNull()]
     private ?\DateTimeImmutable $createdAt = null;
@@ -198,7 +197,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         // $this->plainPassword = null;
     }
 
+    public function getUpdatedAt(): ?\DateTimeImmutable
+    {
+        return $this->UpdatedAt;
+    }
 
+    public function setUpdatedAt(\DateTimeImmutable $UpdatedAt): self
+    {
+        $this->UpdatedAt = $UpdatedAt;
+
+        return $this;
+    }
 
     public function getCreatedAt(): ?\DateTimeImmutable
     {
@@ -212,17 +221,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getUpdatedAt(): ?\DateTimeImmutable
-    {
-        return $this->UpdatedAt;
-    }
 
-    public function setUpdatedAt(\DateTimeImmutable $UpdatedAt): self
-    {
-        $this->UpdatedAt = $UpdatedAt;
-
-        return $this;
-    }
 
     /**
      * @return Collection<int, Ingredient>

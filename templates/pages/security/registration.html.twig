@@ -9,4 +9,14 @@
 
 			{{ form(form)}}
 			</div>
+			<div class="d-flex justify-content-around mt-4">
+				<div class="mt-4">
+					<p>Vous êtes déjà inscrit</p>
+					<a href="{{ path('security.login') }}" class="btn btn-secondary mt-2">Se connecter</a>
+				</div>
+				<div class="mt-4">
+					<p>Si vous avez oublier votre mot de passe, changez le</p>
+					<a href="{{ path('app_forgot_password_request') }}" class="btn btn-success mt-2">Mot de passe oublié</a>
+				</div>
+			</div>
 		{% endblock %}

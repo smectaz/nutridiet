@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+	{% block title %}nutridiet - E-mail envoyé
+	{% endblock %}
+
+	{% block body %}
+		<div class="container">
+			<h1 class="mt-4">L'e-mail de réinitialisation du mot de passe envoyé</h1>
+			<div class="mt-4">
+				<p>Si un compte correspondant à votre adresse e-mail existe.</p>
+				<p>
+					un e-mail vient de vous être envoyé contenant un lien que vous pouvez utiliser pour réinitialiser votre mot de passe.</p>
+				<p>Ce lien expirera dans {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.
+				</p>
+				<p>Si vous ne recevez pas d'e-mail, veuillez vérifier votre dossier spam ou<a href="{{ path('app_forgot_password_request') }}">réessayer</a>.</p>
+			</div>
+		</div>
+	{% endblock %}

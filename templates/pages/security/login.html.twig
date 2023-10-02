@@ -29,7 +29,17 @@
 					<input type="password" class="form-control" id="password" name="_password" placeholder="Entrez votre mot de passe">
 				</div>
 				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-				<button type="submit" class="btn btn-primary mt-4">Se connecter</button>
+				<button type="submit" class="btn btn-warning mt-4">Se connecter</button>
+				<div class="d-flex justify-content-around mt-4">
+					<div class="mt-4">
+						<p>Si vous n'étes pas inscrit</p>
+						<a href="{{ path('security.registration') }}" class="btn btn-secondary mt-2">S'incrire</a>
+					</div>
+					<div class="mt-4">
+						<p>Si vous avez oublier votre mot de passe</p>
+						<a href="{{ path('app_forgot_password_request') }}" class="btn btn-success mt-2">Mot de passe oublié</a>
+					</div>
+				</div>
 			</form>
 		</div>
 	{% endblock %}

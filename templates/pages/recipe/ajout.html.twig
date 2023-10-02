@@ -59,8 +59,17 @@
 			</div>
 
 			<div class="form-group mt-4">
-				{{ form_widget(form.isFavorite) }}
+				{{ form_label(form.isPublic) }}
+				{{ form_widget(form.isPublic) }}
+				<div class="form-error">
+					{{ form_errors(form.isPublic) }}
+				</div>
+			</div>
+
+			<div class="form-group mt-4">
 				{{ form_label(form.isFavorite) }}
+				{{ form_widget(form.isFavorite) }}
+				<sub>Pour être vu dans la page des favoris de la communauté, votre recette dois être publique</sub>
 				<div class="form-error">
 					{{ form_errors(form.isFavorite) }}
 				</div>
@@ -72,9 +81,11 @@
 			<br>
 			<div id="ingredients-wrapper" class="mt-4">
 				{% for field in form.ingredients %}
-					<div style="min-width: 10%;">
-						{{ form_widget(field) }}
-						{{ form_label(field) }}
+					<div style="min-width: 10%; margin-right:10px;">
+							<span class="badge bg-info">
+								{{ form_label(field) }}
+								{{ form_widget(field) }}
+							</span>
 					</div>
 				{% endfor %}
 			</div>

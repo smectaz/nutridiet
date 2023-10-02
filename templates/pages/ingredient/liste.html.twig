@@ -13,7 +13,7 @@
 			{% if not ingredients.items is same as ([]) %}
 
 				<h1>Mes ingrédients</h1>
-				<a href="{{ path("ingredient.new") }}" class="btn btn-primary mt-4">Ajouter un ingrédient</a>
+				<a href="{{ path("ingredient.new") }}" class="btn btn-warning mt-4">Ajouter un ingrédient</a>
 				<div class="count">
 					<p class="mt-4">Nombre total d'ingrédient(s) :{{ ingredients.getTotalItemCount }}</p>
 				</div>
